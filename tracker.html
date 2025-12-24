@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Tracker - Smart Food Wastage and Donation Tracker</title>
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <style>
+  #map {
+   height: 400px;
+   width: 100%;
+   border-radius: 0.75rem;
+  }
+  @keyframes bikeMove {
+    0% { left: 20%; top: 60%; }
+    100% { left: 60%; top: 40%; }
+  }
+ </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+ <header class="bg-white py-4 shadow-lg border-b-4 border-green-500"> 
+  <nav class="container mx-auto flex items-center justify-between px-4">
+   <div class="flex items-center space-x-4">
+    <img src="images/Nowaste.png" alt="Food Waste Tracker Logo" class="w-16 h-16 rounded-full shadow-md">
+    <div>
+      <a href="index.html" class="text-gray-800 text-2xl font-bold logo-text transition duration-300 nav-link">NoWaste</a>
+      <p class="text-green-600 text-sm tracking-wider">Smart Food Wastage and Donation Tracker</p>
+    </div>
+   </div>
+   <div class="flex items-center space-x-6">
+    <a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">About</a>
+    <a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Contact</a>
+    <a href="feedback.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Feedback</a>
+  </nav>
+ </header>
+<!-- Live Tracking Section -->
+<section class="container mx-auto py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-4">
+        <div class="w-2 h-2 bg-red-500 rounded-full mr-2 animate-pulse"></div>
+        <span>LIVE TRACKING</span>
+      </div>
+      <h2 class="text-3xl font-bold mb-4 text-gray-800">Real-Time Donation Tracking</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Monitor your donations as they make their way to those in need. Our live tracking system keeps you updated every step of the way.</p>
+    <video src="images/Delivery Boy.mp4" autoplay loop muted playsinline class="mx-auto my-8 w-60 h-auto rounded-xl shadow-md"></video>
+    </div>
+  </div>
+ </div>
+
+ <section class="container mx-auto py-16 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-animate="animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+          <i class="fas fa-history text-blue-500 mr-2"></i>
+          Recent Donations
+        </h2>
+        <ul class="space-y-4">
+          <li class="border-b border-gray-100 pb-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                <i class="fas fa-utensils text-green-600"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-800 font-medium">10 kg of rice</p>
+                <p class="text-gray-600 text-sm">Donated to ABC School on July 10, 2024</p>
+                <div class="flex items-center mt-1">
+                  <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-1">Recipient rating</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="border-b border-gray-100 pb-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                <i class="fas fa-seedling text-green-600"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-800 font-medium">5 kg of lentils</p>
+                <p class="text-gray-600 text-sm">Donated to XYZ Shelter on July 12, 2024</p>
+                <div class="flex items-center mt-1">
+                  <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-1">Recipient rating</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                <i class="fas fa-apple-alt text-green-600"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-800 font-medium">15 kg of vegetables</p>
+                <p class="text-gray-600 text-sm">Donated to 123 Food Bank on July 15, 2024</p>
+                <div class="flex items-center mt-1">
+                  <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-1">Recipient rating</span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="mt-6 text-center">
+          <a href="#" class="text-green-600 hover:text-green-700 font-medium inline-flex items-center">
+            View all donation history
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-animate="animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+          <i class="fas fa-chart-pie text-purple-500 mr-2"></i>
+          Impact Statistics
+        </h2>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-green-50 p-4 rounded-lg text-center">
+            <div class="text-green-600 text-3xl font-bold">30kg</div>
+            <p class="text-gray-600 text-sm">Total Food Donated</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg text-center">
+            <div class="text-blue-600 text-3xl font-bold">45</div>
+            <p class="text-gray-600 text-sm">Meals Provided</p>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg text-center">
+            <div class="text-purple-600 text-3xl font-bold">3</div>
+            <p class="text-gray-600 text-sm">Organizations Helped</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg text-center">
+            <div class="text-yellow-600 text-3xl font-bold">12kg</div>
+            <p class="text-gray-600 text-sm">CO₂ Emissions Saved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ 
+
+     <!-- Live Status Cards -->
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+       <!-- Active Donations -->
+       <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
+         <div class="flex items-center justify-between mb-4">
+           <h3 class="text-lg font-semibold text-gray-800">Active Donations</h3>
+           <div class="flex items-center">
+             <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+             <span class="text-green-600 text-sm font-medium">LIVE</span>
+           </div>
+         </div>
+         <div class="text-3xl font-bold text-green-600 mb-2">5</div>
+         <p class="text-gray-600 text-sm">Currently being processed</p>
+       </div>
+
+       <!-- In Transit -->
+       <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+         <div class="flex items-center justify-between mb-4">
+           <h3 class="text-lg font-semibold text-gray-800">In Transit</h3>
+           <div class="flex items-center">
+             <div class="w-3 h-3 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+             <span class="text-blue-600 text-sm font-medium">MOVING</span>
+           </div>
+         </div>
+         <div class="text-3xl font-bold text-blue-600 mb-2">3</div>
+         <p class="text-gray-600 text-sm">On the way to recipients</p>
+       </div>
+
+       <!-- Delivered Today -->
+       <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+         <div class="flex items-center justify-between mb-4">
+           <h3 class="text-lg font-semibold text-gray-800">Delivered Today</h3>
+           <div class="flex items-center">
+             <div class="w-3 h-3 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
+             <span class="text-purple-600 text-sm font-medium">COMPLETE</span>
+           </div>
+         </div>
+         <div class="text-3xl font-bold text-purple-600 mb-2">12</div>
+         <p class="text-gray-600 text-sm">Successfully delivered</p>
+       </div>
+     </div>
+
+     <!-- Live Tracking Map Section -->
+     <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+       <div class="flex items-center justify-between mb-6">
+         <h3 class="text-2xl font-bold text-gray-800 flex items-center">
+           <i class="fas fa-map-marker-alt text-red-500 mr-3"></i>
+           Live Donation Map
+         </h3>
+         <div class="flex items-center space-x-4">
+           <div class="flex items-center">
+             <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+             <span class="text-sm text-gray-600">Pickup Points</span>
+           </div>
+           <div class="flex items-center">
+             <div class="w-3 h-3 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+             <span class="text-sm text-gray-600">In Transit</span>
+           </div>
+           <div class="flex items-center">
+             <div class="w-3 h-3 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
+             <span class="text-sm text-gray-600">Delivery Points</span>
+           </div>
+         </div>
+       </div>
+       
+       <!-- Map Container -->
+       <div class="bg-gray-100 rounded-lg h-96 flex items-center justify-center relative overflow-hidden">
+         <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50"></div>
+         
+         <!-- Animated Delivery Icons -->
+         <div class="relative w-full h-full">
+           <!-- Pickup Point 1 -->
+           <div class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+             <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+               <i class="fas fa-warehouse text-white text-sm"></i>
+             </div>
+             <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded text-xs shadow">
+               <span class="font-medium">Restaurant A</span>
+             </div>
+           </div>
+
+           <!-- Pickup Point 2 -->
+           <div class="absolute top-1/3 right-1/3 transform -translate-x-1/2 -translate-y-1/2">
+             <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+               <i class="fas fa-warehouse text-white text-sm"></i>
+             </div>
+             <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded text-xs shadow">
+               <span class="font-medium">Catering B</span>
+             </div>
+           </div>
+
+           <!-- Moving Delivery -->
+           <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-bounce">
+             <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+               <i class="fas fa-truck text-white text-sm"></i>
+             </div>
+             <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-blue-100 px-2 py-1 rounded text-xs">
+               <span class="font-medium text-blue-800">Delivery #123</span>
+             </div>
+           </div>
+
+           <!-- Delivery Point 1 -->
+           <div class="absolute bottom-1/4 left-1/3 transform -translate-x-1/2 -translate-y-1/2">
+             <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+               <i class="fas fa-home text-white text-sm"></i>
+             </div>
+             <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded text-xs shadow">
+               <span class="font-medium">Shelter X</span>
+             </div>
+           </div>
+
+           <!-- Delivery Point 2 -->
+           <div class="absolute bottom-1/3 right-1/4 transform -translate-x-1/2 -translate-y-1/2">
+             <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+               <i class="fas fa-home text-white text-sm"></i>
+             </div>
+             <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded text-xs shadow">
+               <span class="font-medium">Food Bank Y</span>
+             </div>
+           </div>
+
+           <!-- Animated Route Lines -->
+           <svg class="absolute inset-0 w-full h-full" style="pointer-events: none;">
+             <defs>
+               <pattern id="dashed" patternUnits="userSpaceOnUse" width="10" height="10">
+                 <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5"/>
+               </pattern>
+             </defs>
+             <path d="M 25% 25% Q 50% 25% 50% 50% T 33% 75%" stroke="url(#dashed)" stroke-width="3" fill="none" class="animate-pulse"/>
+             <path d="M 33% 33% Q 50% 33% 50% 50% T 25% 67%" stroke="url(#dashed)" stroke-width="3" fill="none" class="animate-pulse"/>
+           </svg>
+         </div>
+
+         <div class="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-lg shadow">
+           <div class="flex items-center space-x-2">
+             <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+             <span class="text-sm font-medium">Live tracking active</span>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Recent Live Activities -->
+     <div class="bg-white rounded-xl shadow-lg p-8">
+       <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+         <i class="fas fa-broadcast-tower text-red-500 mr-3"></i>
+         Live Activity Feed
+       </h3>
+       
+       <div class="space-y-4">
+         <div class="flex items-start space-x-4 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+           <div class="flex-shrink-0 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+             <i class="fas fa-truck text-white"></i>
+           </div>
+           <div class="flex-1">
+             <div class="flex items-center justify-between">
+               <p class="font-medium text-gray-800">Delivery #123 picked up from Restaurant A</p>
+               <span class="text-xs text-gray-500">2 minutes ago</span>
+             </div>
+             <p class="text-sm text-gray-600">5kg rice, 3kg vegetables en route to Shelter X</p>
+             <div class="flex items-center mt-2">
+               <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+               <span class="text-xs text-green-600 font-medium">In Transit</span>
+             </div>
+           </div>
+         </div>
+
+         <div class="flex items-start space-x-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+           <div class="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+             <i class="fas fa-check text-white"></i>
+           </div>
+           <div class="flex-1">
+             <div class="flex items-center justify-between">
+               <p class="font-medium text-gray-800">Delivery #122 completed at Food Bank Y</p>
+               <span class="text-xs text-gray-500">15 minutes ago</span>
+             </div>
+             <p class="text-sm text-gray-600">8kg lentils successfully delivered</p>
+             <div class="flex items-center mt-2">
+               <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+               <span class="text-xs text-purple-600 font-medium">Delivered</span>
+             </div>
+           </div>
+         </div>
+
+         <div class="flex items-start space-x-4 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+           <div class="flex-shrink-0 w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+             <i class="fas fa-clock text-white"></i>
+           </div>
+           <div class="flex-1">
+             <div class="flex items-center justify-between">
+               <p class="font-medium text-gray-800">New donation request from Catering B</p>
+               <span class="text-xs text-gray-500">1 hour ago</span>
+             </div>
+             <p class="text-sm text-gray-600">10kg bread available for pickup</p>
+             <div class="flex items-center mt-2">
+               <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
+               <span class="text-xs text-yellow-600 font-medium">Pending Pickup</span>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <div class="mt-6 text-center">
+         <button class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center mx-auto">
+           <i class="fas fa-sync-alt mr-2"></i>
+           Refresh Live Feed
+         </button>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <footer class="bg-gray-800 text-white py-12 mt-16">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="images/Nowaste.png" alt="NoWaste Logo" class="w-10 h-10 rounded-full">
+          <span class="text-xl font-bold">NoWaste</span>
+        </div>
+        <p class="text-gray-400 text-sm">Smart solution for food waste reduction and community support through efficient donation tracking.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+          <li><a href="learn-more.html" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+        <div class="flex space-x-4 mb-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">Subscribe to our newsletter</p>
+        <div class="flex mt-2">
+          <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-lg w-full text-gray-800">
+          <button class="bg-green-500 hover:bg-green-600 text-white px-4 rounded-r-lg transition">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p>&copy; 2024 NoWaste Food Tracker. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-white transition">Privacy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Terms</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+      </div>
+    </div>
+  </div>
+ </footer>
+</body>
+</html>
